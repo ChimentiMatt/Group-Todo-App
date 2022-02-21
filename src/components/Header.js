@@ -1,8 +1,15 @@
 
 function Header(props) {
-    return (
-        <h1>Todo App Scrum Exercise</h1>
-    );
+  return (
+    <div className ="
+    font-bold
+    text-5xl
+    my-10
+    text-red-400"
+    >
+      <h1>Todo App Scrum Exercise</h1>
+    </div>
+  );
 }
 
 
