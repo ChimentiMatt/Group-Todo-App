@@ -16,7 +16,7 @@ function App() {
   ])
 
   const addTask = (task) => {
-    task.id = 5
+    task.id = Date.now()
     setTasks([...tasks, task])
   }
 
