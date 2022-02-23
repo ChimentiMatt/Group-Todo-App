@@ -1,11 +1,11 @@
 import React from 'react' 
 import Task from "./Task"
 
-export default function Tasks({ tasks }){
+export default function Tasks({ tasks, removeTask }){
     return(
         <>
             {tasks.map((task) => (
-                <Task key={task.id} task={task}/>
+                <Task key={task.id} task={task} removeTask={removeTask}/>
             ))}
         </>
     )

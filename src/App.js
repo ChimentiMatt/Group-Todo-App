@@ -20,13 +20,17 @@ function App() {
     setTasks([...tasks, task])
   }
 
+  const removeTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
   return (
     <div className="
       w-full
       text-center">
       <Header />
       <AddTask addTask={addTask}/>
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={tasks} removeTask={removeTask}/>
     </div>
   );
 }
