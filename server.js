@@ -17,7 +17,7 @@ mongoose.connect(`mongodb+srv://${secret}@todo-cluster.sar1h.mongodb.net/test`, 
         app.use(express.json())
     })
 
-//express doesn't consider 404 to be an error (404 means not found isn't technically an error), so this middleware and the one below it will treat 404 responses as errors.
+//express doesn't consider 404 to be an error (404 means not found, which isn't technically an error), so this middleware and the one below it will treat 404 responses as errors.
 app.use(function (req, res, next) {
     let err = new Error('Not Found')
     err.status = 404
