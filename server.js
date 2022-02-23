@@ -1,9 +1,9 @@
 const express = require('express')
+const morgan = require('morgan')
 const mongoose = require('mongoose')
 const port = process.env.PORT || 8000
 const app = express()
-const secret = require('./secret')
-
+const secret = require('./secret.js')
 
 mongoose.connect(`mongodb+srv://${secret}@todo-cluster.sar1h.mongodb.net/test`, {
     useNewUrlParser: true,
