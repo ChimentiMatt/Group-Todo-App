@@ -5,5 +5,4 @@ const schema = mongoose.Schema({
     complete: {type: Boolean, default: [false], required: [true, 'todo must be complete or incomplete']},
 
 })
-
 module.exports = mongoose.model('Todos', schema)
