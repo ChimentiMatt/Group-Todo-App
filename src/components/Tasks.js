@@ -5,7 +5,7 @@ export default function Tasks({ tasks, removeTask }){
     return(
         <>
             {tasks.map((task) => (
-                <Task key={task.id} task={task} removeTask={removeTask}/>
+                <Task key={task.id} task={task} removeTask={removeTask} completed={false}/>
             ))}
         </>
     )
