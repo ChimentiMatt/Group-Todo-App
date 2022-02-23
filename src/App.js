@@ -7,16 +7,19 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: 'Walk the dog'
+      text: 'Walk the dog',
+      completed: false,
     },
     {
       id: 2,
-      text: 'Exercise'
+      text: 'Exercise',
+      completed: false,
     }
   ])
 
   const addTask = (task) => {
     task.id = Date.now()
+    task.completed = false
     setTasks([...tasks, task])
   }
 
