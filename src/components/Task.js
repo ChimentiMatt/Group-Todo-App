@@ -3,6 +3,7 @@ const Task = ({ task, removeTask }) => {
     return (
         <div className="flex justify-center font-bold">
                 <p className="w-44 text-red-400" id={task.id}>{task.text}</p>
+                <p className="w-44 text-red-300">{ConvertDate(task.dueDate)}</p>
                 <button onClick={() => {task.completed = MarkDone(task)}}
                     className="ml-5 hover:text-red-400"
                 ><AiFillCheckCircle/></button>
@@ -28,4 +29,8 @@ function MarkDone(task){
     return !task.completed;
 }
 
+function ConvertDate(taskDate){
+    let convertedDate = new Date(parseInt(taskDate))
+    return convertedDate.toDateString()
+}
 export default Task

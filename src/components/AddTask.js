@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import DatePickerButton from './DatePickerButton';
 export default function AddTask({ addTask }) {
     const [text, setText] = useState('')
-
-    const handleChange = e => {
+    
+	const handleChange = e => {
         setText(e.target.value)
     }
 
     const handleSubmit = e => {
         e.preventDefault()
-        addTask({text})
+		let dueDate = document.getElementById('hidden-due-date').innerHTML;
+		if(!dueDate){dueDate = Date.now()}
+		addTask({text , dueDate})
     }
 
 	const buttonStyle = "bg-blue-500 hover:bg-blue-700 text-white font-bold ml-2 py-1 px-2 rounded";//style for todo add buttons

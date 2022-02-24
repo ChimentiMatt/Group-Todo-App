@@ -6,7 +6,8 @@ function DatePickerButton(props){
     return (
         <div className ="contents">
             <h3 className={"border-solid border-2 border-sky-500 px-3 flex items-center"}>Due Date:</h3>
-            <h3 className={"border-solid border-2 border-sky-500 px-3 flex items-center"}>{date.toDateString()}</h3>
+            <h3 className={"border-solid border-2 border-sky-500 px-3 flex items-center"} id="date-label">{date.toDateString()}</h3>
+            <div className ="hidden" id="hidden-due-date"></div>
             <button id= "calendar-button" className = {props.buttonStyle} onClick ={CalendarButtonHandler} type="none"><AiTwotoneCalendar/></button>
             <div id ="calendar-container" className = "hidden">
                 <Calendar
@@ -18,9 +19,10 @@ function DatePickerButton(props){
         </div>
     );
 
-function CalendarChangeHandler(value){
+    function CalendarChangeHandler(value){
     document.getElementById("calendar-container").classList.add('hidden') //hide calendar picker
     document.getElementById("calendar-button").classList.remove('hidden') //show calendar button
+    document.getElementById("hidden-due-date").innerHTML = value.valueOf();
     setDate(value);
     console.log(value)
     return 0;
