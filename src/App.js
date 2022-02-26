@@ -9,11 +9,13 @@ function App() {
       id: 1,
       text: 'Walk the dog',
       completed: false,
+      dueDate: 1644652800000
     },
     {
       id: 2,
       text: 'Exercise',
       completed: false,
+      dueDate: 1644652800000
     }
   ])
 
